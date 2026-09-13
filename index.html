@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of MUTARUTWA Immaculate, Software Engineering student at AUCA.">
+<title>MUTARUTWA Immaculate | Software Engineering</title>
+<style>
+/* Distinct monochrome portfolio theme */
+::selection{background:#fff;color:#000}
+body{background:#050505}
+
+:root{
+  --navy:#050505; --navy2:#0d0d0d; --blue:#e8e8e8; --cyan:#ffffff;
+  --white:#f5f5f5; --muted:#a6a6a6; --line:#292929; --card:#111111;
+  --soft:#181818;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--navy);color:var(--white);line-height:1.65}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,21,47,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:18px;font-weight:800;letter-spacing:.5px}.logo b{color:var(--cyan)}
+.links{display:flex;gap:20px;list-style:none}.links a{font-size:13px;color:var(--muted)}.links a:hover{color:var(--white)}
+.cv{padding:9px 16px;border:1px solid var(--blue);border-radius:8px;color:#fff;background:#1c1c1c;font-weight:700;font-size:13px}
+section{padding:88px 0;scroll-margin-top:72px}
+.hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}
+.kicker:before{content:"";width:28px;height:2px;background:var(--blue)}
+h1{font-size:clamp(50px,8vw,88px);line-height:.95;letter-spacing:-4px;margin-bottom:24px}
+h1 span{color:var(--cyan)}
+.hero h2{font-size:21px;font-weight:700;color:#dddddd;margin-bottom:17px}
+.hero p{max-width:690px;color:var(--muted);font-size:17px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:12px 19px;border-radius:8px;border:1px solid var(--line);font-weight:800;font-size:14px}
+.primary{background:var(--blue);border-color:var(--blue);color:white}.primary:hover{filter:brightness(1.08)}
+.hero-card{background:linear-gradient(145deg,#102c58,#091a39);border:1px solid #333333;padding:25px;border-radius:18px;position:relative;overflow:hidden}
+.hero-card:after{content:"";position:absolute;width:180px;height:180px;border:1px solid #e8e8e855;border-radius:50%;right:-70px;top:-70px}
+.photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:3px solid #e8e8e855}
+.hero-card h3{font-size:23px;margin-top:20px}.hero-card p{color:var(--muted);font-size:14px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.mini div{background:#0b0b0b;border:1px solid var(--line);padding:12px;border-radius:8px}.mini small{display:block;color:var(--cyan);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px}.mini strong{font-size:13px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:30px}
+.section-head .num{color:var(--cyan);font-weight:900;font-size:12px;letter-spacing:2px}
+h2{font-size:clamp(34px,5vw,52px);letter-spacing:-2px;line-height:1.05}
+.lead{color:var(--muted);max-width:590px}
+.about-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:22px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:27px}
+.panel p{color:var(--muted)}.facts{display:grid;gap:12px}.fact{border-left:3px solid var(--blue);padding:9px 0 9px 14px}.fact small{display:block;color:var(--muted);font-size:11px}.fact strong{font-size:15px}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.skill{background:var(--card);border:1px solid var(--line);padding:23px;border-radius:10px;min-height:155px}
+.skill-no{color:var(--blue);font-weight:900;font-size:12px}.skill h3{margin:8px 0 7px;font-size:19px}.skill p{color:var(--muted);font-size:14px}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.project{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:25px;position:relative}
+.project .num{color:var(--cyan);font-weight:900;font-size:12px}.project h3{font-size:23px;margin:10px 0}.project p{color:var(--muted);font-size:14px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:11px;padding:5px 9px;border:1px solid #3b3b3b;border-radius:5px;color:#d0d0d0}
+.timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:25px;display:grid;gap:18px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;position:relative}
+.job:before{content:"";position:absolute;left:-33px;top:28px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid var(--navy)}
+.job .date{color:var(--cyan);font-size:11px;font-weight:900;letter-spacing:1.5px}.job h3{font-size:22px;margin:5px 0}.job p{color:var(--muted);font-size:14px}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu{background:var(--card);border:1px solid var(--line);padding:25px;border-radius:10px}.edu .period{color:var(--cyan);font-weight:900;font-size:12px}.edu h3{font-size:22px;margin:9px 0}.edu p{color:var(--muted);font-size:14px}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.cert{background:linear-gradient(135deg,#111111,#0a1b39);border:1px solid var(--line);padding:25px;border-radius:10px}.cert-mark{display:inline-block;color:var(--cyan);border:1px solid #444444;padding:4px 7px;border-radius:4px;font-size:10px;font-weight:900;letter-spacing:1px}.cert h3{font-size:21px;margin:14px 0 6px}.cert p{color:var(--muted);font-size:14px}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:18px}.lang{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:10px}.lang h3{font-size:21px}.lang p{color:var(--muted);font-size:14px}
+.contact{background:linear-gradient(110deg,#161616,#0d0d0d);border:1px solid #3a3a3a;border-radius:14px;padding:50px;text-align:center}.contact h2{margin-bottom:12px}.contact p{color:var(--muted);max-width:650px;margin:0 auto 24px}.contact a{display:inline-block;margin:5px;padding:10px 15px;border:1px solid #444444;border-radius:7px;font-size:13px;font-weight:800;background:#101010}.contact a:hover{background:#262626}
+footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:#777777;font-size:13px}
+@media(max-width:900px){.links{display:none}.hero,.about-grid,.project-grid,.edu-grid,.cert-grid{grid-template-columns:1fr}.skill-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){section{padding:65px 0}.skill-grid,.langs{grid-template-columns:1fr}.hero{gap:35px}h1{font-size:54px;letter-spacing:-2px}.contact{padding:35px 20px}.mini{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav">
+<a class="logo" href="#home">MUTARUTWA <b>Immaculate</b></a>
+<ul class="links">
+<li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certificates</a></li><li><a href="#contact">Contact</a></li>
+</ul>
+<a class="cv" href="MUTARUTWA_Immaculate_CV.pdf" target="_blank">View CV</a>
+</div></nav>
+
+<section id="home"><div class="wrap hero">
+<div>
+<div class="kicker">Software Engineering Student</div>
+<h1>MUTARUTWA<br><span>Immaculate</span></h1>
+<h2>Building practical skills across software, networks and technology.</h2>
+<p>I am a Software Engineering student at the Adventist University of Central Africa (AUCA), developing practical experience through academic projects, networking practice, Linux, web technologies and collaborative work.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore Projects</a><a class="btn" href="#contact">Contact Me</a></div>
+</div>
+<div class="hero-card">
+<img class="photo" src="profile.jpg" alt="MUTARUTWA Immaculate">
+<h3>Software Engineering • AUCA</h3>
+<p>Day Program · Expected graduation 2028</p>
+<div class="mini"><div><small>Location</small><strong>Rwanda</strong></div><div><small>Focus</small><strong>IT & Technology</strong></div><div><small>Languages</small><strong>English · Kinyarwanda</strong></div><div><small>GitHub</small><strong>immaculate27806</strong></div></div>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<div class="section-head"><div><div class="num">01 / ABOUT</div><h2>Who I am</h2></div><p class="lead">A student combining technology learning with real-world business experience.</p></div>
+<div class="about-grid">
+<div class="panel"><p>I am MUTARUTWA Immaculate, a Software Engineering student at AUCA. My learning has included software development fundamentals, networking, Linux environments, web technologies and technical project work. I enjoy turning practical problems into organized technology solutions and continuing to grow through hands-on work.</p><br><p>Outside my academic work, I have managed Imma Business Ltd since 2020. That experience has strengthened my communication, customer relations, marketing, business management, teamwork and problem-solving abilities.</p></div>
+<div class="panel facts"><div class="fact"><small>University</small><strong>AUCA</strong></div><div class="fact"><small>Program</small><strong>B.Sc. Software Engineering</strong></div><div class="fact"><small>Business</small><strong>Imma Business Ltd</strong></div><div class="fact"><small>Since</small><strong>2020</strong></div></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<div class="section-head"><div><div class="num">02 / CAPABILITIES</div><h2>Skills</h2></div><p class="lead">Technical and professional abilities developed through coursework, projects and business.</p></div>
+<div class="skill-grid">
+<div class="skill"><div class="skill-no">01</div><h3>HTML & CSS</h3><p>Creating and styling structured web pages with responsive layouts.</p></div>
+<div class="skill"><div class="skill-no">02</div><h3>Software Engineering</h3><p>Software development fundamentals, system analysis and design concepts.</p></div>
+<div class="skill"><div class="skill-no">03</div><h3>Networking</h3><p>Practical exposure to network configuration and network operations.</p></div>
+<div class="skill"><div class="skill-no">04</div><h3>Linux & Servers</h3><p>Working with Linux environments and web server configuration.</p></div>
+<div class="skill"><div class="skill-no">05</div><h3>Docker</h3><p>Hands-on exposure to container deployment in a Linux course project.</p></div>
+<div class="skill"><div class="skill-no">06</div><h3>Business & Communication</h3><p>Customer relations, marketing, entrepreneurship, teamwork and problem solving.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<div class="section-head"><div><div class="num">03 / SELECTED WORK</div><h2>Projects</h2></div><p class="lead">Academic and technical work that has helped me apply what I learn.</p></div>
+<div class="project-grid">
+<article class="project"><div class="num">PROJECT 01</div><h3>Community Safety Analytics System</h3><p>A software project focused on organizing and analyzing community safety information to support understanding of incidents, trends and community needs.</p><div class="tags"><span class="tag">Software Engineering</span><span class="tag">Analytics</span></div></article>
+<article class="project"><div class="num">PROJECT 02</div><h3>Drone Management System</h3><p>A system concept for organizing and managing drone-related information and activities.</p><div class="tags"><span class="tag">Software Project</span><span class="tag">System Design</span></div></article>
+<article class="project"><div class="num">PROJECT 03</div><h3>Campus Item Borrowing System</h3><p>A system designed to support item borrowing, tracking and management within a campus environment.</p><div class="tags"><span class="tag">Software Project</span><span class="tag">Management System</span></div></article>
+<article class="project"><div class="num">PROJECT 04</div><h3>Smart Student Visit System</h3><p>A collaborative project designed to support student visits and related activities in secondary schools.</p><div class="tags"><span class="tag">Collaboration</span><span class="tag">Software Project</span></div></article>
+<article class="project"><div class="num">PROJECT 05</div><h3>Network & Web Server Configuration</h3><p>A Linux-based technical project involving network configuration, web server setup and Docker deployment.</p><div class="tags"><span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">Networking</span></div></article>
+</div></div></section>
+
+<section id="experience"><div class="wrap">
+<div class="section-head"><div><div class="num">04 / EXPERIENCE</div><h2>Experience</h2></div><p class="lead">Experience gained through entrepreneurship and collaborative technology work.</p></div>
+<div class="timeline">
+<div class="job"><div class="date">2020 — PRESENT</div><h3>Business Owner / Retail Entrepreneur</h3><p><strong>Imma Business Ltd</strong></p><p>Managing retail operations, product sales, customer relationships, marketing and day-to-day business responsibilities.</p></div>
+<div class="job"><div class="date">2026</div><h3>Software Project Team Member</h3><p><strong>Imma Business</strong></p><p>Participated in a collaborative project to develop the Smart Student Visit System for secondary-school students.</p></div>
+</div></div></section>
+
+<section id="education"><div class="wrap">
+<div class="section-head"><div><div class="num">05 / EDUCATION</div><h2>Education</h2></div></div>
+<div class="edu-grid">
+<div class="edu"><div class="period">2024 — PRESENT</div><h3>Adventist University of Central Africa (AUCA)</h3><p><strong>Bachelor of Science in Software Engineering</strong></p><p>Day Program · Expected graduation 2028</p></div>
+<div class="edu"><div class="period">2020 — 2023</div><h3>Nyagatare Secondary School</h3><p><strong>A2 Diploma — Mathematics, Physics and Computer Science</strong></p></div>
+</div></div></section>
+
+<section id="certifications"><div class="wrap">
+<div class="section-head"><div><div class="num">06 / CREDENTIALS</div><h2>Certifications</h2></div><p class="lead">Network operations learning completed through Internet Society Learning.</p></div>
+<div class="cert-grid">
+<div class="cert"><span class="cert-mark">CERTIFICATE</span><h3>Advanced Network Operations 2.0</h3><p><strong>Internet Society Learning</strong></p><p>March 2, 2026</p></div>
+<div class="cert"><span class="cert-mark">CERTIFICATE</span><h3>Introduction to Network Operations</h3><p><strong>Internet Society Learning</strong></p><p>November 5, 2025</p></div>
+</div></div></section>
+
+<section id="languages"><div class="wrap">
+<div class="section-head"><div><div class="num">07 / LANGUAGES</div><h2>Languages</h2></div></div>
+<div class="langs"><div class="lang"><h3>Kinyarwanda</h3><p>Native</p></div><div class="lang"><h3>English</h3><p>Working proficiency</p></div></div>
+</div></section>
+
+<section id="contact"><div class="wrap"><div class="contact">
+<div class="kicker" style="justify-content:center">Let's connect</div><h2>Open to learning and collaboration.</h2>
+<p>I am interested in technology opportunities, collaborative projects and continued growth in software engineering and IT.</p>
+<a href="mailto:rutaremaraimmaculate@gmail.com">Email</a><a href="tel:0788434155">Phone</a><a href="https://github.com/immaculate27806" target="_blank">GitHub</a><a href="MUTARUTWA_Immaculate_CV.pdf" target="_blank">View CV</a>
+</div></div></section>
+<footer>© 2026 MUTARUTWA Immaculate · Software Engineering Student · AUCA</footer>
+</body>
+</html>
